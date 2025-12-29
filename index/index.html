@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototyping tools - mijn ontwerpproces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in-down': 'fadeInDown 0.8s ease',
+                        'fade-in-up': 'fadeInUp 0.6s ease backwards',
+                    },
+                    keyframes: {
+                        fadeInDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            background: linear-gradient(135deg, rgb(26, 27, 74) 0%, rgb(15, 32, 65) 50%, rgb(20, 40, 80) 100%);
+            min-height: 100vh;
+        }
+        /* Stagger animations */
+        .week-card-1 { animation: fadeInUp 0.6s ease 0.1s backwards; }
+        .week-card-2 { animation: fadeInUp 0.6s ease 0.2s backwards; }
+        .week-card-3 { animation: fadeInUp 0.6s ease 0.3s backwards; }
+        .week-card-4 { animation: fadeInUp 0.6s ease 0.4s backwards; }
+        .week-card-5 { animation: fadeInUp 0.6s ease 0.5s backwards; }
+        .week-card-6 { animation: fadeInUp 0.6s ease 0.6s backwards; }
+        .week-card-7 { animation: fadeInUp 0.6s ease 0.7s backwards; }
+        .week-card-8 { animation: fadeInUp 0.6s ease 0.8s backwards; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-white font-['Segoe_UI',Tahoma,Geneva,Verdana,sans-serif] p-5 min-h-screen">
+    <div class="max-w-[1200px] mx-auto py-10 px-5">
+        <!-- Header -->
+        <header class="text-center mb-15 animate-fade-in-down">
+            <h1 class="text-5xl md:text-6xl text-white mb-4 tracking-wide" 
+                style="text-shadow: 0 0 20px rgba(52, 152, 219, 0.6), 0 4px 8px rgba(0, 0, 0, 0.5);">
+                 Prototyping Tools - Mijn Ontwerpproces
+            </h1>
+            <p class="text-lg text-white/80" style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">
+                Klik op een week om de voortgang te bekijken
+            </p>
+        </header>
+    </div>
+
+        <!-- Navigation Grid -->
+        <nav class="mb-15">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 list-none p-0">
+                <!-- Week 1 -->
+                <li>
+                    <a href="week1/week1.html" 
+                       class="week-card-1 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                        <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                             style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                        <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                              style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 1</span>
+                        <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">Schetsen & Ontwerp</span>
+                    </a>
+                </li>
+
+                <!-- Week 2 -->
+                <li>
+                    <a href="week2/week2.html" 
+                       class="week-card-2 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                        <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                             style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                        <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                              style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 2</span>
+                        <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">Finale schetsen</span>
+                    </a>
+                </li>
+
+                <!-- Week 3 -->
+                <li>
+                    <a href="week3/week3.html" 
+                       class="week-card-3 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                        <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                             style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                        <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                              style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 3</span>
+                        <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">Mid-fi starten</span>
+                    </a>
+                </li>
+
+                <!-- Week 4 -->
+                <li>
+                    <a href="week4/week4.html" 
+                       class="week-card-4 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                        <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                             style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                        <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                              style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 4</span>
+                        <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">Mid-fi afwerken</span>
+                    </a>
+                </li>
+
+                <!-- Week 5 -->
+                <li>
+                    <a href="week5/week5.html" 
+                       class="week-card-5 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                        <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                             style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                        <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                              style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 5</span>
+                        <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">High-fi </span>
+                    </a>
+                </li>
+
+                <!-- Week 6 -->
+               <li>
+                    <a href="week6/week6.html" 
+                       class="week-card-6 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                        <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                             style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                        <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                              style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 6</span>
+                        <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">Procesdocument starten </span>
+                    </a>
+                </li>
+
+                <!-- Week 7 -->
+                <li>
+                    <a href="week7/week7.html" 
+                       class="week-card-7 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                        <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                             style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                        <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                              style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 7</span>
+                        <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">GSM schermen in Figma</span>
+                    </a>
+                </li>
+
+                <!-- Week 8 -->
+                <li>
+                    <a href="week8/week8.html" 
+                       class="week-card-8 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                        <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                             style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                        <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                              style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 8</span>
+                        <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">Tailwind</span>
+                    </a>
+                </li>
+
+                <!-- week 9 -->
+                 <li>
+                    <a href="week9/week9.html"
+                          class="week-card-8 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                            <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                              style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                            <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                                style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 9</span>
+                            <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">Interactieve schermen</span>
+                    </a>    
+                 </li>
+
+                 <!-- week 10 -->
+                 <li> 
+                    <a href="week10/week10.html"
+                          class="week-card-8 group flex flex-col items-center justify-center p-10 bg-[rgba(40,42,90,0.4)] rounded-2xl border-2 border-[rgba(52,152,219,0.3)] no-underline text-white transition-all duration-[400ms] ease-[cubic-bezier(0.175,0.885,0.32,1.275)] relative overflow-hidden min-h-[220px] shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:-translate-y-3 hover:scale-105 hover:bg-[rgba(52,152,219,0.2)] hover:border-[#3498db] hover:shadow-[0_0_30px_rgba(52,152,219,0.6),0_8px_25px_rgba(0,0,0,0.4)] active:translate-y-[-5px] active:scale-[0.98] before:content-[''] before:absolute before:top-[-50%] before:left-[-50%] before:w-[200%] before:h-[200%] before:bg-gradient-to-r before:from-transparent before:via-[rgba(52,152,219,0.1)] before:to-transparent before:rotate-45 before:transition-all before:duration-600 hover:before:left-[100%]">
+                            <div class="w-[70px] h-[70px] mb-5 bg-[url('locked.png')] bg-contain bg-no-repeat bg-center transition-all duration-400 group-hover:bg-[url('unlocked.png')] group-hover:scale-[1.15] group-hover:rotate-[5deg]" 
+                              style="filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));"></div>
+                            <span class="text-3xl font-bold text-[#3498db] mb-2 transition-all duration-300 group-hover:text-[#5dade2] group-hover:scale-110" 
+                                style="text-shadow: 0 2px 8px rgba(52, 152, 219, 0.5);">Week 10</span>
+                            <span class="text-base text-white/70 text-center transition-all duration-300 group-hover:text-white/95">Eindconclusie en Reflectie</span>
+                    </a>                    
+                    </li>
+            </ul>
+        </nav>
+<div class="max-w-[1200px] mx-auto py-10 px-5">
+        <!-- Footer -->
+            <!-- PDF Download Section -->
+        <div class="flex justify-center mb-12 animate-fade-in-up" style="animation-delay: 0.2s;">
+            <a href="/ontwerpdocumentatie.pdf" 
+               download="Prototyping-Tools-Documentatie-Lea-Christodoulou-Wazni.pdf"
+               class="group inline-flex items-center gap-3 px-8 py-4 bg-[rgba(52,152,219,0.15)] hover:bg-[rgba(52,152,219,0.3)] border-2 border-[#3498db] rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(52,152,219,0.5)] active:scale-[0.98]">
+                <svg class="w-6 h-6 text-[#3498db] group-hover:text-[#5dade2] transition-colors duration-300" 
+                     fill="none" 
+                     stroke="currentColor" 
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round" 
+                          stroke-linejoin="round" 
+                          stroke-width="2" 
+                          d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                    </path>
+                </svg>
+                <span class="text-white text-lg transition-all duration-300 group-hover:text-[#5dade2]" 
+                      style="text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);">
+                    Download Ontwerp Documentatie (PDF)
+                </span>
+            </a>
+        </div>
+        <footer class="text-center mt-15 pt-8 border-t border-[rgba(52,152,219,0.3)] animate-fade-in-up">
+            <p class="text-white/60 text-sm"> Prototyping Tools Opdracht - Lea Christodoulou Wazni GDM1</p>
+        </footer>
+    </div>
+</body>
+</html>
